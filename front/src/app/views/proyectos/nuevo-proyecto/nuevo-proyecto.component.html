@@ -28,6 +28,29 @@
           }}-->
         </div>
         <div class="mb-2">
+          <label for="Fecha_inicio">Fecha de Inicio</label>
+          <input type="date" class="form-control" formControlName="Fecha_inicio" />
+          @if (proyecto.invalid && (proyecto.dirty || proyecto.touched)) {
+              <div class="alert">
+                  @if (proyecto.errors?.["required"]) {
+                      <div class="ng-invalid">La Fecha de Inicio requerida</div>
+                  }
+              </div>
+          }
+      </div>
+      <div class="mb-2">
+          <label for="Fecha_fin">Fecha Final</label>
+          <input type="date" class="form-control" formControlName="Fecha_fin" />
+          @if (proyecto.invalid && (proyecto.dirty || proyecto.touched)) {
+              <div class="alert">
+                  @if (proyecto.errors?.["required"]) {
+                      <div class="ng-invalid">La Fecha de Inicio requerida</div>
+                  }
+              </div>
+          }
+      </div>
+
+        <div class="mb-2">
           <button
             type="submit"
             class="btn btn-primary"
@@ -41,5 +64,4 @@
         </div>
       </form>
     </div>
-  </div>
    

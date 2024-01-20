@@ -23,6 +23,7 @@ private urlBase: string = 'http://localhost/Crud-Examen/backed/Controllers/Emple
     emp.append('Nombre', empleado.Nombre);
     emp.append('Cargo', empleado.Cargo);
     emp.append('Salario', empleado.Salario.toString());
+    emp.append('Fecha_contratacion', empleado.Fecha_contratacion.toString());
     return this.clientePhp.post(this.urlBase + 'insertar', emp);
   }
   actualizar(empleado: Iempleados, id: number): Observable<any> {
@@ -31,6 +32,7 @@ private urlBase: string = 'http://localhost/Crud-Examen/backed/Controllers/Emple
     emp.append('Nombre', empleado.Nombre);
     emp.append('Cargo', empleado.Cargo);
     emp.append('Salario', empleado.Salario.toString());
+    emp.append('Fecha_contratacion', empleado.Fecha_contratacion.toString());
     return this.clientePhp.post(this.urlBase + 'actualizar', emp);
   }
   eliminar(id: number): Observable<any> {

@@ -21,6 +21,8 @@ export class ProyectosService {
     var emp = new FormData();
     emp.append('ID_empleado_responsable', proyecto.ID_empleado_responsable.toString());
     emp.append('Nombre', proyecto.Nombre);
+    emp.append('Fecha_inicio', proyecto.Fecha_inicio.toString());
+    emp.append('Fecha_fin', proyecto.Fecha_fin.toString());
     return this.clientePhp.post(this.urlBase + 'insertar', emp);
   }
   actualizar(proyecto:Iproyectos, id:number): Observable<any> {
@@ -28,6 +30,8 @@ export class ProyectosService {
     emp.append('ID_proyecto', id.toString());
     emp.append('ID_empleado_responsable', proyecto.ID_empleado_responsable.toString());
     emp.append('Nombre', proyecto.Nombre);
+    emp.append('Fecha_inicio', proyecto.Fecha_inicio.toString());
+    emp.append('Fecha_fin', proyecto.Fecha_fin.toString());
     return this.clientePhp.post(this.urlBase + 'actualizar', emp);
   }
   eliminar(id: number): Observable<any> {

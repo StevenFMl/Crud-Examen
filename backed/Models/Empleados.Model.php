@@ -31,12 +31,12 @@ public function uno($ID_empleado)
 }
 }
 
-public function insertar($Nombre, $Cargo, $Salario)
+public function insertar($Nombre, $Cargo, $Salario,$Fecha_contratacion)
 {
     try{
     $con = new Clase_Conectar_Base_Datos();
     $con = $con->ProcedimientoConectar();
-    $cadena = "INSERT INTO `Empleados`(`Nombre`, `Cargo`, `Salario`,`Fecha_contratacion`) VALUES ('$Nombre','$Cargo','$Salario',NOW())"; 
+    $cadena = "INSERT INTO `Empleados`(`Nombre`, `Cargo`, `Salario`,`Fecha_contratacion`) VALUES ('$Nombre','$Cargo','$Salario','$Fecha_contratacion')"; 
     $result = mysqli_query($con, $cadena);
     return 'ok';
 }catch (Throwable $th) {
@@ -45,12 +45,12 @@ public function insertar($Nombre, $Cargo, $Salario)
     $con->close();
 }
 }
-public function actualizar($ID_empleado, $Nombre, $Cargo, $Salario)
+public function actualizar($ID_empleado, $Nombre, $Cargo, $Salario,$Fecha_contratacion)
 {
     try{
      $con = new Clase_Conectar_Base_Datos();
     $con = $con->ProcedimientoConectar();
-    $cadena = "UPDATE Empleados SET Nombre = '$Nombre', Cargo = '$Cargo', Salario = '$Salario' WHERE ID_empleado = $ID_empleado";
+    $cadena = "UPDATE Empleados SET Nombre = '$Nombre', Cargo = '$Cargo', Salario = '$Salario', Fecha_contratacion = '$Fecha_contratacion' WHERE ID_empleado = $ID_empleado";
     $result = mysqli_query($con, $cadena);
     return 'ok';
     }catch (Throwable $th) {

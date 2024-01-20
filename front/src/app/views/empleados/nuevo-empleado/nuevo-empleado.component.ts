@@ -23,6 +23,7 @@ export class NuevoEmpleadoComponent {
     Nombre: new FormControl('', Validators.required),
     Cargo: new FormControl('', Validators.required),
     Salario: new FormControl('', Validators.required),
+    Fecha_contratacion: new FormControl('', Validators.required),
 
 });
   constructor(
@@ -43,6 +44,7 @@ export class NuevoEmpleadoComponent {
           Nombre: res.Nombre,
           Cargo: res.Cargo,
           Salario: res.Salario,
+          Fecha_contratacion: res.Fecha_contratacion,
         });
       });
     }

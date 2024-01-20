@@ -27,6 +27,8 @@ export class NuevoProyectoComponent {
 
     ID_empleado_responsable: new FormControl('', Validators.required),
     Nombre: new FormControl('', Validators.required),
+    Fecha_inicio: new FormControl('', Validators.required),
+    Fecha_fin: new FormControl('', Validators.required),
 
 });
   constructor(
@@ -49,6 +51,8 @@ export class NuevoProyectoComponent {
           this.proyecto.patchValue({
             ID_empleado_responsable: res.ID_empleado_responsable,
             Nombre: res.Nombre,
+            Fecha_inicio: res.Fecha_inicio,
+            Fecha_fin: res.Fecha_fin,
           });
         });
       }

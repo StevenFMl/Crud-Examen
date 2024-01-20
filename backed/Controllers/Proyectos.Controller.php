@@ -31,17 +31,21 @@ switch ($_GET['op']) {
         case 'insertar':    
             $ID_empleado_responsable  = $_POST["ID_empleado_responsable"];
             $Nombre = $_POST["Nombre"];
+            $Fecha_inicio = $_POST["Fecha_inicio"];
+            $Fecha_fin = $_POST["Fecha_fin"];
             $datos = array();
-            $datos = $Proyectos->insertar($ID_empleado_responsable,$Nombre);
+            $datos = $Proyectos->insertar($ID_empleado_responsable,$Nombre,$Fecha_inicio,$Fecha_fin);
             echo json_encode($datos);
             break;
     case 'actualizar':
         $ID_proyecto = $_POST["ID_proyecto"];
         $ID_empleado_responsable  = $_POST["ID_empleado_responsable"];
         $Nombre = $_POST["Nombre"];
+        $Fecha_inicio = $_POST["Fecha_inicio"];
+        $Fecha_fin = $_POST["Fecha_fin"];
         
         $datos = array();
-        $datos = $Proyectos->actualizar($ID_proyecto, $ID_empleado_responsable, $Nombre);
+        $datos = $Proyectos->actualizar($ID_proyecto, $ID_empleado_responsable, $Nombre,$Fecha_inicio,$Fecha_fin);
         echo json_encode($datos);
         break;
         case 'eliminar':

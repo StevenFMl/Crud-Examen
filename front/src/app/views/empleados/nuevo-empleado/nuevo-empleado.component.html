@@ -37,6 +37,17 @@
           </div>
           }
         </div>
+        <div class="mb-2">
+          <label for="Fecha_contratacion">Fecha de contratacion</label>
+          <input type="date" class="form-control" formControlName="Fecha_contratacion" />
+          @if (empleado.invalid && (empleado.dirty || empleado.touched)) {
+              <div class="alert">
+                  @if (empleado.errors?.["required"]) {
+                      <div class="ng-invalid">La Fecha de contratacion requerida</div>
+                  }
+              </div>
+          }
+      </div>
   
         <div class="mb-2">
           <button

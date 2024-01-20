@@ -30,8 +30,9 @@ switch ($_GET["op"]) {
                 $Nombre = $_POST["Nombre"];
                 $Cargo = $_POST["Cargo"];
                 $Salario = $_POST["Salario"];
+                $Fecha_contratacion= $_POST["Fecha_contratacion"];
                 $datos = array();
-                $datos = $Empleados->insertar($Nombre,$Cargo,$Salario);
+                $datos = $Empleados->insertar($Nombre,$Cargo,$Salario,$Fecha_contratacion);
                 echo json_encode($datos);
                 break;
                 case "actualizar":
@@ -39,8 +40,9 @@ switch ($_GET["op"]) {
                     $Nombre = $_POST["Nombre"];
                     $Cargo = $_POST["Cargo"];
                     $Salario = $_POST["Salario"];
+                    $Fecha_contratacion= $_POST["Fecha_contratacion"];
                     $datos = array();
-                    $datos = $Empleados->actualizar($ID_empleado,$Nombre,$Cargo,$Salario);
+                    $datos = $Empleados->actualizar($ID_empleado,$Nombre,$Cargo,$Salario,$Fecha_contratacion);
                     echo json_encode($datos);
                     break;
                     case "eliminar":
